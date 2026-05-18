@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Attendance - HRMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#cfdaf2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dee8ff",
+                        "on-tertiary-container": "#fbfdff",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-variant": "#d8e3fb",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-tint": "#005ac2",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "surface-container-low": "#f0f3ff",
+                        "on-background": "#111c2d",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "inverse-primary": "#adc6ff",
+                        "secondary-container": "#d0e1fb",
+                        "background": "#f9f9ff",
+                        "on-error": "#ffffff",
+                        "surface": "#f9f9ff",
+                        "tertiary-container": "#727577",
+                        "surface-container": "#e7eeff",
+                        "on-secondary-container": "#54647a",
+                        "outline": "#727785",
+                        "inverse-surface": "#263143",
+                        "primary-container": "#2170e4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001a42",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "primary": "#0058be",
+                        "inverse-on-surface": "#ecf1ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary": "#505f76",
+                        "on-primary-container": "#fefcff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "outline-variant": "#c2c6d6",
+                        "surface-bright": "#f9f9ff",
+                        "on-surface": "#111c2d",
+                        "tertiary": "#595c5e",
+                        "on-surface-variant": "#424754"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "base": "4px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"],
+                        "button": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface">
+<aside class="fixed h-screen w-72 left-0 top-0 z-50 bg-white border-r border-slate-200 shadow-lg hidden lg:flex flex-col h-full py-6">
+<div class="px-6 mb-8 flex items-center gap-3">
+<span class="text-xl font-black text-blue-600">Employee Portal</span>
+</div>
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a smiling male employee in a business casual blue shirt against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6t0IQCglfjCPXDGsziBwGmNw08BqFYwYNylHsRspa4W_7gEMjGYb4_1vl4g-PfKJ842QFGswSYIbA6jBfoiEKJ9BT02UMAbMCwUoI8qY34Z5F-DaSU-3dgqazypVUry40cxctC0cEQVrgDZxicIf7BTWMr9D2ac2fVrQKgxzCCQXXgDyZLseBtLNlqCCXyQ6QoFTRFXwkiumNLR0efwyIv8AwZ5JFEB4BFczFxysJhMV8XJwLhvVl1_tKUX15aJ4BdRp8u-fSMWk"/>
+</div>
+<div>
+<p class="font-h3 text-sm">HR Department</p>
+<p class="text-xs text-on-surface-variant">Employee Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-slate-900 mx-2 hover:bg-slate-100 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-700 rounded-lg mx-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm">Attendance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-slate-900 mx-2 hover:bg-slate-100 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">event_busy</span>
+<span class="font-label-sm">Leave</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-slate-900 mx-2 hover:bg-slate-100 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-sm">Payroll</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-slate-900 mx-2 hover:bg-slate-100 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm">Profile</span>
+</a>
+</nav>
+</aside>
+<div class="lg:ml-72 min-h-screen flex flex-col">
+<header class="flex items-center justify-between px-4 h-16 w-full bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<button class="lg:hidden p-2 hover:bg-slate-50 rounded-full cursor-pointer">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-h2 text-lg lg:text-xl text-slate-900">My Attendance</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-50 rounded-full cursor-pointer transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="flex-1 p-gutter lg:p-lg space-y-lg max-w-7xl mx-auto w-full">
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="lg:col-span-2 bg-white rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-slate-100 p-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-lg">
+<span class="material-symbols-outlined text-primary-fixed-dim text-6xl opacity-20">schedule</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<p class="text-on-surface-variant font-label-sm mb-base">CURRENT STATUS</p>
+<h2 class="font-h1 text-blue-600 mb-base">08:45 AM</h2>
+<p class="text-on-surface-variant font-body-md">Punched in at 09:02 AM today</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="flex items-center justify-center gap-xs px-xl py-md bg-primary text-on-primary rounded-full font-button shadow-md hover:shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined">logout</span>
+                                Punch Out
+                            </button>
+</div>
+</div>
+<div class="mt-lg grid grid-cols-3 gap-md border-t border-slate-100 pt-lg">
+<div class="text-center">
+<p class="text-xs text-on-surface-variant font-medium">Work Time</p>
+<p class="font-h3 text-blue-600">07:22h</p>
+</div>
+<div class="text-center border-x border-slate-100 px-md">
+<p class="text-xs text-on-surface-variant font-medium">Overtime</p>
+<p class="font-h3 text-slate-400">00:00h</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-on-surface-variant font-medium">Break Time</p>
+<p class="font-h3 text-slate-700">00:45h</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-slate-100 p-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-h3">Quick Stats</h3>
+<span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">THIS MONTH</span>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center py-xs">
+<span class="text-on-surface-variant">Present Days</span>
+<span class="font-semibold">18/22</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-blue-600 h-full" style="width: 82%"></div>
+</div>
+<div class="flex justify-between items-center py-xs">
+<span class="text-on-surface-variant">Half Days</span>
+<span class="font-semibold text-orange-600">02</span>
+</div>
+<div class="flex justify-between items-center py-xs">
+<span class="text-on-surface-variant">Absent</span>
+<span class="font-semibold text-error">01</span>
+</div>
+</div>
+</div>
+<button class="mt-md text-blue-600 font-button flex items-center justify-center gap-xs hover:bg-blue-50 py-base rounded-lg transition-colors">
+                        View Details
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</section>
+<section class="space-y-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<button class="p-2 border border-slate-200 rounded-lg bg-white hover:bg-slate-50">
+<span class="material-symbols-outlined text-on-surface-variant">chevron_left</span>
+</button>
+<div class="text-center min-w-[140px]">
+<h3 class="font-h3 text-lg">October 2023</h3>
+</div>
+<button class="p-2 border border-slate-200 rounded-lg bg-white hover:bg-slate-50">
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-sm bg-white p-base border border-slate-200 rounded-xl">
+<button class="px-md py-xs bg-primary text-on-primary rounded-lg font-button text-xs transition-all">All Logs</button>
+<button class="px-md py-xs text-on-surface-variant hover:bg-slate-50 rounded-lg font-button text-xs transition-all">Exceptions</button>
+<button class="px-md py-xs text-on-surface-variant hover:bg-slate-50 rounded-lg font-button text-xs transition-all">On Leave</button>
+</div>
+</div>
+<div class="hidden md:block bg-white rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-slate-100 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 border-b border-slate-100">
+<tr>
+<th class="px-lg py-md font-label-sm text-on-surface-variant uppercase tracking-wider">Date</th>
+<th class="px-lg py-md font-label-sm text-on-surface-variant uppercase tracking-wider">Punch In</th>
+<th class="px-lg py-md font-label-sm text-on-surface-variant uppercase tracking-wider">Punch Out</th>
+<th class="px-lg py-md font-label-sm text-on-surface-variant uppercase tracking-wider">Total Hours</th>
+<th class="px-lg py-md font-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-lg py-md font-label-sm text-on-surface-variant uppercase tracking-wider"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-lg py-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Oct 24, 2023</span>
+<span class="text-xs text-on-surface-variant">Tuesday</span>
+</div>
+</td>
+<td class="px-lg py-md font-medium">09:02 AM</td>
+<td class="px-lg py-md font-medium">06:15 PM</td>
+<td class="px-lg py-md">09h 13m</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+                                        Present
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-lg py-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Oct 23, 2023</span>
+<span class="text-xs text-on-surface-variant">Monday</span>
+</div>
+</td>
+<td class="px-lg py-md font-medium">08:55 AM</td>
+<td class="px-lg py-md font-medium">06:05 PM</td>
+<td class="px-lg py-md">09h 10m</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+                                        Present
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors bg-orange-50/30">
+<td class="px-lg py-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Oct 20, 2023</span>
+<span class="text-xs text-on-surface-variant">Friday</span>
+</div>
+</td>
+<td class="px-lg py-md font-medium">09:15 AM</td>
+<td class="px-lg py-md font-medium">01:30 PM</td>
+<td class="px-lg py-md">04h 15m</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">
+                                        Half Day
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined">error</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors bg-red-50/30">
+<td class="px-lg py-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Oct 19, 2023</span>
+<span class="text-xs text-on-surface-variant">Thursday</span>
+</div>
+</td>
+<td class="px-lg py-md font-medium text-slate-400">—</td>
+<td class="px-lg py-md font-medium text-slate-400">—</td>
+<td class="px-lg py-md text-slate-400">—</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">
+                                        Absent
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-2 text-on-surface-variant hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined">warning</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="md:hidden space-y-md">
+<div class="bg-white p-md rounded-xl border border-slate-100 shadow-sm">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex flex-col">
+<span class="font-bold">Oct 24, 2023</span>
+<span class="text-xs text-on-surface-variant">Tuesday</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-100 text-green-700">PRESENT</span>
+</div>
+<div class="grid grid-cols-3 gap-sm pt-sm border-t border-slate-50">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase">In</p>
+<p class="text-sm font-semibold">09:02 AM</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase">Out</p>
+<p class="text-sm font-semibold">06:15 PM</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-surface-variant uppercase">Total</p>
+<p class="text-sm font-semibold">09h 13m</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-md rounded-xl border border-slate-100 shadow-sm border-l-4 border-l-orange-400">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex flex-col">
+<span class="font-bold">Oct 20, 2023</span>
+<span class="text-xs text-on-surface-variant">Friday</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-orange-100 text-orange-700">HALF DAY</span>
+</div>
+<div class="grid grid-cols-3 gap-sm pt-sm border-t border-slate-50">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase">In</p>
+<p class="text-sm font-semibold">09:15 AM</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase">Out</p>
+<p class="text-sm font-semibold">01:30 PM</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-surface-variant uppercase">Total</p>
+<p class="text-sm font-semibold">04h 15m</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="lg:hidden h-16 bg-white border-t border-slate-200 fixed bottom-0 w-full z-50 flex justify-around items-center px-2 pb-safe">
+<div class="flex flex-col items-center justify-center text-slate-500 text-[10px] font-medium">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-blue-600 bg-blue-50/50 rounded-xl px-3 py-1 text-[10px] font-medium">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+<span>Check-in</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 text-[10px] font-medium">
+<span class="material-symbols-outlined">travel</span>
+<span>Leave</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 text-[10px] font-medium">
+<span class="material-symbols-outlined">receipt_long</span>
+<span>Pay</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 text-[10px] font-medium">
+<span class="material-symbols-outlined">more_horiz</span>
+<span>More</span>
+</div>
+</footer>
+</div>
+</body></html>

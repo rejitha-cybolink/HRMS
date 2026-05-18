@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            <main class="container-fluid p-4">
+                <div class="mb-4"><h3 class="fw-bold text-dark mb-1">My Dashboard</h3></div>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4"><div class="card border-0 shadow-sm rounded-4 p-4 hover-card bg-primary text-white"><h5 class="fw-bold mb-3">Quick Punch</h5><h2 class="fw-bold" id="clock-time">00:00</h2><button id="clock-btn" class="btn btn-light w-100 fw-bold mt-3">Clock In</button></div></div>
+                    <div class="col-md-4"><div class="card border-0 shadow-sm rounded-4 p-4 hover-card"><h6 class="text-muted fw-bold text-uppercase">Leave Balance</h6><h2 class="fw-bold mt-2">12 Days</h2><a href="leave_management.html" class="btn btn-outline-primary mt-3 w-100">Apply Leave</a></div></div>
+                    <div class="col-md-4"><div class="card border-0 shadow-sm rounded-4 p-4 hover-card"><h6 class="text-muted fw-bold text-uppercase">Next Holiday</h6><h4 class="fw-bold mt-2">Christmas Day</h4><p class="text-muted small">Dec 25</p></div></div>
+                </div>
+            </main>
+            <div id="footer-container"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

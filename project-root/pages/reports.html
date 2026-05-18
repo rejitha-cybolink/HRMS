@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            
+            <main class="container-fluid p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5 gap-3">
+                    <div>
+                        <h3 class="fw-bold text-dark mb-1">Attendance Report</h3>
+                        <p class="text-muted mb-0 d-flex align-items-center fw-bold">
+                            <i class="bi bi-calendar3 text-primary me-2"></i> October 2023
+                        </p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-outline-secondary bg-white text-dark fw-bold d-flex align-items-center shadow-sm">
+                            <i class="bi bi-filetype-csv me-2 fs-5"></i> Export CSV
+                        </button>
+                        <button class="btn btn-primary fw-bold d-flex align-items-center shadow-sm">
+                            <i class="bi bi-filetype-pdf me-2 fs-5"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 hover-card">
+                            <span class="text-muted small fw-bold text-uppercase tracking-wider">Working Days</span>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <h2 class="fw-bold text-dark mb-0 display-6">22</h2>
+                                <i class="bi bi-calendar-check text-primary bg-primary bg-opacity-10 p-2 rounded-3 fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 hover-card">
+                            <span class="text-muted small fw-bold text-uppercase tracking-wider">Avg. Hours</span>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <h2 class="fw-bold text-dark mb-0 display-6">8.4</h2>
+                                <i class="bi bi-clock-history text-success bg-success bg-opacity-10 p-2 rounded-3 fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 hover-card">
+                            <span class="text-muted small fw-bold text-uppercase tracking-wider">Present Today</span>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <h2 class="fw-bold text-dark mb-0 display-6">142</h2>
+                                <i class="bi bi-people text-info bg-info bg-opacity-10 p-2 rounded-3 fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 hover-card">
+                            <span class="text-muted small fw-bold text-uppercase tracking-wider">Accuracy</span>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <h2 class="fw-bold text-dark mb-0 display-6">95%</h2>
+                                <i class="bi bi-patch-check text-warning bg-warning bg-opacity-10 p-2 rounded-3 fs-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-7">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-4 p-md-5">
+                            <h5 class="fw-bold text-dark mb-5">Departmental Average</h5>
+                            
+                            <div class="mb-4 pb-2">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold text-dark">Engineering</span>
+                                    <span class="fw-bold text-primary">8.6h/day</span>
+                                </div>
+                                <div class="progress rounded-pill bg-light" style="height: 10px;">
+                                    <div class="progress-bar bg-primary rounded-pill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4 pb-2">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold text-dark">Design</span>
+                                    <span class="fw-bold text-primary">8.1h/day</span>
+                                </div>
+                                <div class="progress rounded-pill bg-light" style="height: 10px;">
+                                    <div class="progress-bar bg-primary opacity-75 rounded-pill" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold text-dark">Marketing</span>
+                                    <span class="fw-bold text-primary">7.8h/day</span>
+                                </div>
+                                <div class="progress rounded-pill bg-light" style="height: 10px;">
+                                    <div class="progress-bar bg-primary opacity-50 rounded-pill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-4 p-md-5 bg-primary text-white position-relative overflow-hidden hover-card">
+                            <div class="position-relative z-1 d-flex flex-column h-100 justify-content-center">
+                                <div class="bg-white bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-file-earmark-check fs-2"></i>
+                                </div>
+                                <h4 class="fw-bold mb-3">Automated Report Ready</h4>
+                                <p class="text-white-50 mb-5 fs-6">Your monthly compliance report is generated and ready for submission to the executive board.</p>
+                                <button class="btn btn-light text-primary fw-bold py-3 px-4 rounded-3 shadow-sm mt-auto w-100">Submit Final Report</button>
+                            </div>
+                            <i class="bi bi-check2-all position-absolute" style="font-size: 250px; opacity: 0.05; right: -50px; bottom: -50px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <div id="footer-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holidays - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            
+            <main class="container-fluid p-4">
+                <div class="mb-4">
+                    <h3 class="fw-bold text-dark mb-1">Company Holidays</h3>
+                    <p class="text-muted mb-0">Official holiday schedule for <script>document.write(new Date().getFullYear())</script></p>
+                </div>
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="bg-light text-muted small text-uppercase">
+                                    <tr>
+                                        <th class="ps-4 py-3 border-bottom-0">Date</th>
+                                        <th class="py-3 border-bottom-0">Holiday Name</th>
+                                        <th class="py-3 border-bottom-0">Day</th>
+                                        <th class="pe-4 py-3 border-bottom-0 text-end">Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4 py-3">
+                                            <div class="fw-bold text-dark">Jan 01</div>
+                                        </td>
+                                        <td class="fw-bold">New Year's Day</td>
+                                        <td class="text-muted">Monday</td>
+                                        <td class="pe-4 text-end"><span class="badge bg-primary-subtle text-primary rounded-pill px-3">Public</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 py-3">
+                                            <div class="fw-bold text-dark">Jul 04</div>
+                                        </td>
+                                        <td class="fw-bold">Independence Day</td>
+                                        <td class="text-muted">Thursday</td>
+                                        <td class="pe-4 text-end"><span class="badge bg-primary-subtle text-primary rounded-pill px-3">Public</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 py-3">
+                                            <div class="fw-bold text-dark">Dec 25</div>
+                                        </td>
+                                        <td class="fw-bold">Christmas Day</td>
+                                        <td class="text-muted">Wednesday</td>
+                                        <td class="pe-4 text-end"><span class="badge bg-primary-subtle text-primary rounded-pill px-3">Public</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <div id="footer-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

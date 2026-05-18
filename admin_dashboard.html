@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workforce Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container": "#edeeef",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-container": "#ffd0cc",
+                    "on-primary-fixed": "#0f0069",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary": "#960014",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-container": "#dad7ff",
+                    "tertiary-container": "#bc1d25",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-tertiary-fixed": "#410004",
+                    "surface-dim": "#d9dadb",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#4f46e5",
+                    "surface-container-low": "#f3f4f5",
+                    "on-surface": "#191c1d",
+                    "outline": "#777587",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary": "#006c49",
+                    "background": "#f8f9fa",
+                    "on-secondary-fixed": "#002113",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#e2dfff",
+                    "on-background": "#191c1d",
+                    "surface-tint": "#4d44e3",
+                    "surface-variant": "#e1e3e4",
+                    "on-surface-variant": "#464555",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-bright": "#f8f9fa",
+                    "on-secondary-fixed-variant": "#005236",
+                    "inverse-surface": "#2e3132",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "secondary-container": "#6cf8bb",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#3525cd",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "0.5rem",
+                    "base": "4px",
+                    "lg": "1.5rem",
+                    "gutter": "1rem",
+                    "xs": "0.25rem",
+                    "container-margin": "1rem",
+                    "md": "1rem",
+                    "2xl": "3rem",
+                    "xl": "2rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background selection:bg-primary-fixed">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white border-b border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed" data-alt="Professional headshot of a smiling middle-aged male manager in a charcoal suit, clean corporate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiulWLc4l9LuMb6QsizjZF6PfyZ-Uc_82qZXiLa6YwGBZpu3SWd5MQbL-kNeMOXD9994JJ1KAZWAOUEEH1bemD4vB-Kq6jJwwYEsLXeG_k9AIjdAWOx52_UpksO1tejBgAw2lxoW9n7DfWIHqxXA_roFBlyYn5QfuprbzpaGrIDWPQ8lzOIVAuoQ7r3GcyDoFU52xXu5ggrnGKmp6_AZHJrKvyTAMDXHx-78OQZNPj68a9H4J_kROpjLehHNaMuV28utysC5yQpug"/>
+<span class="text-xl font-extrabold tracking-tighter text-indigo-600">Workforce</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-full transition-colors" data-icon="notifications">notifications</button>
+</div>
+</header>
+<main class="pt-24 pb-28 px-4 max-w-7xl mx-auto">
+<section class="mb-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-on-surface">Team Overview</h1>
+<p class="font-body-md text-on-surface-variant">Real-time workforce health and attendance metrics.</p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary px-6 py-3 rounded-lg text-on-primary font-label-md shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="file_download">file_download</span>
+                Export Monthly Report
+            </button>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col gap-1">
+<span class="font-label-sm text-outline uppercase tracking-wider">Total Employees</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-on-surface">24</span>
+<span class="text-[12px] text-secondary font-medium">+2 this month</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col gap-1">
+<span class="font-label-sm text-outline uppercase tracking-wider">Currently Clocked In</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-indigo-600">18</span>
+<span class="text-[12px] text-outline font-medium">75% capacity</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col gap-1">
+<span class="font-label-sm text-outline uppercase tracking-wider">On Leave</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-tertiary">2</span>
+<span class="text-[12px] text-outline font-medium">Approved today</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<section class="lg:col-span-4 space-y-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-on-surface">Pending Leave Requests</h2>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px] font-bold">2 NEW</span>
+</div>
+<div class="space-y-md">
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex items-start gap-3 mb-4">
+<img alt="Sarah Jenkins" class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a professional young woman with dark hair, soft natural lighting, warm corporate office aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDruCdzgc7NzBpNTzhylX2i-l0zUSZ-4h9Paxzrtf-1R_stxVOOov_m37HYFBoZoMLBbw-Z6AtdE0GThUobPcrdgLsz04pfdudpPxSCGSphUZ41pCt3XTYkT9k7ZpMkL1hXAHiZ7uvcf1yeCwh8a0hShlM63BAaxkpI9xc50swCAr1hca8Os-lU7EJrgya729B29JfWAJJ8Jhex4JaMah7ipbjEVUwkj8qwtONMus2lYLnL2YTvJzfCFgC6YawOSnKGeYe5MZA2ehM"/>
+<div>
+<h3 class="font-label-md text-on-surface">Sarah Jenkins</h3>
+<p class="text-[12px] text-on-surface-variant">Annual Leave • 3 Days</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 rounded-lg bg-secondary-container text-on-secondary-fixed-variant font-label-sm active:scale-95 transition-all">Accept</button>
+<button class="flex-1 py-2 rounded-lg border border-error text-error font-label-sm active:scale-95 transition-all">Reject</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex items-start gap-3 mb-4">
+<img alt="Marcus Thorne" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a creative professional male with short beard, wearing glasses, soft blue studio lighting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCY9GJidw10aqeqa6uW0AdnCOnelN3yJfuR4s0rr4-1RbsXZTaY044z1868S00_BoQuVtjZlrfvvxvkT65BmO-xtDAzRjhwV_fWeKEOEfFKvI8cHNNnjGvoSTtd_67MWlSDgG1gHyFqMtsaPyBC901BHKWjqU8IZwVvti_Pfm7QDCYoHxK9hJyi_hoLKTxrDKMruO1jPPQxgrWr7Pga_Txr9YrSerq2wmwGxl25bS91KVpfLxKVPww9QjbuisWPB0uWi8Fkz5FuFM"/>
+<div>
+<h3 class="font-label-md text-on-surface">Marcus Thorne</h3>
+<p class="text-[12px] text-on-surface-variant">Sick Leave • 1 Day</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 rounded-lg bg-secondary-container text-on-secondary-fixed-variant font-label-sm active:scale-95 transition-all">Accept</button>
+<button class="flex-1 py-2 rounded-lg border border-error text-error font-label-sm active:scale-95 transition-all">Reject</button>
+</div>
+</div>
+</div>
+</section>
+<section class="lg:col-span-8 space-y-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-on-surface">Daily Attendance Report</h2>
+<div class="flex gap-2">
+<span class="flex items-center gap-1 text-[12px] text-outline"><span class="w-2 h-2 rounded-full bg-secondary"></span> On Time</span>
+<span class="flex items-center gap-1 text-[12px] text-outline"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Late</span>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-gray-100">
+<tr>
+<th class="px-6 py-4 font-label-sm text-outline uppercase tracking-wider">Employee</th>
+<th class="px-6 py-4 font-label-sm text-outline uppercase tracking-wider">Check In</th>
+<th class="px-6 py-4 font-label-sm text-outline uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-sm text-outline uppercase tracking-wider">Activity</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50">
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-[12px] font-bold">AL</div>
+<span class="font-label-md">Alex Loh</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">08:52 AM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-fixed-variant">
+                                        ON TIME
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-outline text-[12px] font-bold">DR</div>
+<span class="font-label-md">David Reed</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">09:15 AM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-tertiary-container text-white">
+                                        LATE
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-[12px] font-bold">EK</div>
+<span class="font-label-md">Elena Kim</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">08:45 AM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-fixed-variant">
+                                        ON TIME
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-[12px] font-bold">JT</div>
+<span class="font-label-md">James Tan</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">08:58 AM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-secondary-container text-on-secondary-fixed-variant">
+                                        ON TIME
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-outline cursor-pointer" data-icon="more_horiz">more_horiz</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 bg-gray-50 text-center">
+<button class="text-primary font-label-sm hover:underline">View All 24 Records</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 h-20 bg-white border-t border-gray-100 shadow-[0px_-4px_20px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<button class="flex flex-col items-center justify-center text-indigo-600 bg-indigo-50/50 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[11px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 px-4 py-1 hover:text-indigo-500 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Inter'] text-[11px] font-medium">Attendance</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 px-4 py-1 hover:text-indigo-500 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span class="font-['Inter'] text-[11px] font-medium">Leaves</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 px-4 py-1 hover:text-indigo-500 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

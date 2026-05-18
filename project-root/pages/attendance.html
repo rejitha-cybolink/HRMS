@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            
+            <main class="container-fluid p-4">
+                <div class="mb-4">
+                    <h3 class="fw-bold text-dark mb-1">My Attendance</h3>
+                    <p class="text-muted mb-0">Track and view your daily work logs.</p>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-4 position-relative overflow-hidden hover-card">
+                            <i class="bi bi-stopwatch position-absolute opacity-10 text-primary" style="font-size: 200px; right: -40px; top: -40px;"></i>
+                            <div class="position-relative z-1 d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+                                <div>
+                                    <span class="text-muted small fw-bold text-uppercase d-block mb-1">Current Status</span>
+                                    <h1 class="display-4 fw-bold text-primary mb-0" id="current-time">00:00</h1>
+                                    <p class="text-muted fs-5 mb-0" id="clock-status">Not Punched In</p>
+                                </div>
+                                <div class="mt-4 mt-md-0">
+                                    <button id="clock-btn" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg d-flex align-items-center">
+                                        <i class="bi bi-box-arrow-in-right me-2 fs-5" id="clock-btn-icon"></i> <span id="clock-btn-text">Clock In</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="row text-center pt-4 border-top position-relative z-1 mt-auto">
+                                <div class="col">
+                                    <small class="text-muted fw-bold text-uppercase d-block">Work Time</small>
+                                    <span class="fs-4 fw-bold text-primary" id="total-hours">07:22 h</span>
+                                </div>
+                                <div class="col border-start border-end">
+                                    <small class="text-muted fw-bold text-uppercase d-block">Overtime</small>
+                                    <span class="fs-4 fw-bold text-muted">00:00 h</span>
+                                </div>
+                                <div class="col">
+                                    <small class="text-muted fw-bold text-uppercase d-block">Break Time</small>
+                                    <span class="fs-4 fw-bold text-dark">00:45 h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="fw-bold mb-0">Stats</h5>
+                                <span class="badge bg-primary-subtle text-primary border-0 rounded-pill">THIS MONTH</span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-muted fw-bold">Present Days</span>
+                                    <span class="fw-bold">18 / 22</span>
+                                </div>
+                                <div class="progress rounded-pill" style="height: 8px;">
+                                    <div class="progress-bar bg-primary rounded-pill" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted fw-bold">Half Days</span>
+                                <span class="fw-bold text-warning">2</span>
+                            </div>
+                            <div class="d-flex justify-content-between py-2">
+                                <span class="text-muted fw-bold">Absent</span>
+                                <span class="fw-bold text-danger">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="card-header bg-white border-bottom p-4">
+                        <h5 class="fw-bold mb-0">Attendance Log</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="bg-light text-muted small text-uppercase">
+                                    <tr>
+                                        <th class="ps-4 py-3 border-bottom-0">Date</th>
+                                        <th class="py-3 border-bottom-0">Punch In</th>
+                                        <th class="py-3 border-bottom-0">Punch Out</th>
+                                        <th class="py-3 border-bottom-0">Total</th>
+                                        <th class="pe-4 py-3 border-bottom-0 text-end">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4">
+                                            <div class="fw-bold">Oct 24, 2023</div>
+                                            <div class="small text-muted">Tuesday</div>
+                                        </td>
+                                        <td class="fw-semibold">09:02 AM</td>
+                                        <td class="fw-semibold">06:15 PM</td>
+                                        <td class="text-muted">09h 13m</td>
+                                        <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success rounded-pill px-3 py-2">Present</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">
+                                            <div class="fw-bold">Oct 23, 2023</div>
+                                            <div class="small text-muted">Monday</div>
+                                        </td>
+                                        <td class="fw-semibold">08:55 AM</td>
+                                        <td class="fw-semibold">06:05 PM</td>
+                                        <td class="text-muted">09h 10m</td>
+                                        <td class="pe-4 text-end"><span class="badge bg-success-subtle text-success rounded-pill px-3 py-2">Present</span></td>
+                                    </tr>
+                                    <tr class="bg-warning bg-opacity-10">
+                                        <td class="ps-4">
+                                            <div class="fw-bold">Oct 20, 2023</div>
+                                            <div class="small text-muted">Friday</div>
+                                        </td>
+                                        <td class="fw-semibold">09:15 AM</td>
+                                        <td class="fw-semibold">01:30 PM</td>
+                                        <td class="text-muted">04h 15m</td>
+                                        <td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">Half Day</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <div id="footer-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HR Portal | Secure Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#727785",
+                        "inverse-surface": "#263143",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-bright": "#f9f9ff",
+                        "surface": "#f9f9ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-tertiary-container": "#fbfdff",
+                        "background": "#f9f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#005ac2",
+                        "surface-dim": "#cfdaf2",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-primary-container": "#fefcff",
+                        "surface-container-highest": "#d8e3fb",
+                        "surface-container": "#e7eeff",
+                        "on-background": "#111c2d",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-container": "#d0e1fb",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#727577",
+                        "error": "#ba1a1a",
+                        "tertiary": "#595c5e",
+                        "surface-container-high": "#dee8ff",
+                        "primary-container": "#2170e4",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#ecf1ff",
+                        "inverse-primary": "#adc6ff",
+                        "secondary": "#505f76",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#424754",
+                        "on-primary-fixed-variant": "#004395",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-variant": "#d8e3fb",
+                        "on-surface": "#111c2d",
+                        "on-primary": "#ffffff",
+                        "primary": "#0058be",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-primary-fixed": "#001a42",
+                        "on-secondary-container": "#54647a",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "outline-variant": "#c2c6d6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-margin": "16px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "md": "16px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "button": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest min-h-screen flex items-center justify-center p-md">
+<div class="w-full max-w-screen-xl grid grid-cols-1 lg:grid-cols-12 bg-white rounded-xl shadow-lg overflow-hidden min-h-[600px]">
+<!-- Branding & Visual Side -->
+<div class="hidden lg:flex lg:col-span-7 bg-primary relative overflow-hidden flex-col justify-between p-xl">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-xl">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="corporate_fare">corporate_fare</span>
+<span class="text-white font-h1 text-h2 tracking-tight">HR Portal</span>
+</div>
+<h1 class="text-white font-h1 text-h1 max-w-md mt-lg">Managing your workforce with precision and care.</h1>
+<p class="text-primary-fixed-dim font-body-lg text-body-lg mt-md max-w-sm">Secure access to payroll, employee records, and performance metrics for the modern enterprise.</p>
+</div>
+<div class="relative z-10 flex items-center gap-md bg-white/10 backdrop-blur-md p-md rounded-xl border border-white/20">
+<div class="flex -space-x-3">
+<img alt="" class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="portrait of a smiling professional woman in a bright office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALQ7U2xF_Da4_m1P1nqQXHN-NlY5kG9m5bn-q2nE1II4JemkZvBLA-whY6iNkAumtF5c3TJ4styJjdgTIodv5EaFETq5UOkVD4valcvGn_WedVOvynfro9JtNSYxkusgR9e7UkvV5KK_hWIss6Zl8mUlFACV0XrUUu0IZrNAOYv09ILgc1Cd2n59CZ97SLsvSYOm-FKb7DvQ1T8SGiF9jZcvg3rDGpx77CxVNFHtzM4F0kUNzvfaRTmf8qezLbr5C83o_o3x82JJM"/>
+<img alt="" class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="headshot of a confident businessman wearing glasses against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8e-g9jO4wHMKzcK4rke_BewaTuDIuDFLIMU52Ldid9o5_rabURtqzVB6TYVLdnXWNHDo3fzgATJxyZ9I-RTS30Q49oNL0QGdjszkMovxNrVb6aIWgiyo9k8tx8HqS7R59spjX4dSgFPo7IaheLqP67MgF4Yh8rDHCC8c_JjbkG1cjZYiw9rZOXwHQhBdImaIVS3B1nghMn_qIgEk8aFjFVfsK2Geuk96aOzR1VgCPgVr1DxZVfOVArXEMo1niGoDusrFSqCqM0WY"/>
+<img alt="" class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="professional woman in corporate attire smiling in a modern architectural lobby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBajABfVBk1Ct2jnk9ocshvthXE7dprGciw7_d7TgxfvPFwDkMPVRH16UemrgYcyl5E_eBoY8r00gB4Fo3-iNrTuqKaug7Ui_1FO_QffM8GaKeMya4uvd4c_Wlkg-56WMBJwQHyE95DbUyUUPKBB9U1qI6QzKIy2Tdb6LHFHWPQH3a2ymiZL4qs5eJ-ENLOCX2J5dumGfgY-Vac5tlqeKjFIHEqN9bwYPI2-OnYoNe_uszDHw3dCo6m9ebYdtmaPswkZvziutRfC8"/>
+</div>
+<div class="text-white">
+<p class="font-label-sm text-label-sm">Trusted by 2,000+ Teams</p>
+</div>
+</div>
+<!-- Background Aesthetic -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-container opacity-90"></div>
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary-fixed-dim rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+<div class="absolute -left-20 -top-20 w-96 h-96 bg-on-primary-fixed-variant rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+</div>
+</div>
+<!-- Login Form Side -->
+<div class="lg:col-span-5 flex flex-col justify-center px-lg py-xl md:px-xl">
+<div class="w-full max-w-sm mx-auto">
+<!-- Mobile Logo -->
+<div class="lg:hidden flex items-center gap-2 mb-xl">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="corporate_fare">corporate_fare</span>
+<span class="text-on-surface font-h1 text-h3 tracking-tight">HR Portal</span>
+</div>
+<div class="mb-xl">
+<h2 class="text-on-surface font-h1 text-h2 mb-xs">Welcome back</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Please enter your credentials to access your account.</p>
+</div>
+<form class="space-y-lg">
+<!-- Email / ID Field -->
+<div class="space-y-base">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="employee-id">Email or Employee ID</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="w-full pl-xl pr-md py-md bg-white border border-outline-variant rounded-xl text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary transition-all" id="employee-id" name="employee-id" placeholder="alex.rivers@company.com" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-base">
+<div class="flex justify-between items-center">
+<label class="block font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="lock">lock</span>
+</div>
+<input class="w-full pl-xl pr-xl py-md bg-white border border-outline-variant rounded-xl text-on-surface text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary transition-all" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-md flex items-center text-outline hover:text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me Toggle -->
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary focus:ring-primary border-outline-variant rounded" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block font-body-md text-body-md text-on-surface-variant" for="remember-me">
+                            Remember me for 30 days
+                        </label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary font-button text-button py-md px-lg rounded-xl shadow-sm hover:bg-on-primary-fixed-variant active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="login">login</span>
+</button>
+<!-- Security Badge -->
+<div class="pt-lg border-t border-surface-container flex items-center justify-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">End-to-End Encrypted</span>
+</div>
+</form>
+<!-- Footer Links -->
+<div class="mt-xl text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Having trouble logging in? <a class="text-primary font-medium hover:underline" href="#">Contact HR Support</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Holiday Management - HRCore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#1f108e",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#d0e1fb",
+                        "primary-container": "#3730a3",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c8c4d5",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "on-tertiary-container": "#fe9562",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "background": "#f7f9fb",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-tertiary-fixed-variant": "#7a3003",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-surface-variant": "#464553",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-container": "#54647a",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-primary": "#c3c0ff",
+                        "error": "#ba1a1a",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#777584",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#752c00",
+                        "secondary": "#505f76",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-primary-fixed-variant": "#3b35a7",
+                        "tertiary": "#511c00",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-tint": "#544fc0",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#a9a7ff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "lg": "2rem",
+                        "sm": "1rem",
+                        "margin-desktop": "2.5rem",
+                        "xs": "0.5rem",
+                        "md": "1.5rem",
+                        "gutter": "1rem",
+                        "base-unit": "4px",
+                        "margin-mobile": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .holiday-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-background">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-screen w-64 flex flex-col p-4 z-50 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800">
+<div class="mb-8 px-4">
+<h1 class="text-lg font-bold text-slate-900 dark:text-slate-50">Enterprise HR</h1>
+<p class="text-xs text-slate-500 font-medium">Admin Console</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-100 hover:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-100 hover:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-inter text-sm font-medium">Employees</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-100 hover:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-inter text-sm font-medium">Attendance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-100 hover:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span class="font-inter text-sm font-medium">Leaves</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg scale-100 hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="font-inter text-sm font-medium">Holidays</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors scale-100 hover:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-inter text-sm font-medium">Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar Component -->
+<header class="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-8 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search holidays..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-slate-200">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional portrait of a manager with a friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOX0EwqVpdc3F0cCgB7vJKpKCTxvY1bUbU7meJJeu1LDVkBOWmQVmtlhUhT-kF_AZ5UXwmZu-mzpjqQIvEiAgKLn7OegL89Y37TRhB_GdTU2mM5K27aryxjUvxRPxE7JfdnLV-X5UBoWK25wTFjQ3-U-f6m6LtnqCIvceh04Al39i-N4l396_A0yrGIVf466Aoc3lAQIDSs5OlS2mMEZ01NhPudlgj3yMLuwSbVcfIxbZB8s4zJwL9jlCo65WyGnQ4xYohAhQoaV3n"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 mt-16 p-8 min-h-screen">
+<!-- Header Section -->
+<div class="flex items-end justify-between mb-8">
+<div>
+<nav class="flex items-center gap-2 text-label-sm text-on-surface-variant mb-2">
+<span>Holidays</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">Yearly Calendar 2024</span>
+</nav>
+<h2 class="font-headline-xl text-on-surface">Holiday Management</h2>
+<p class="text-body-md text-on-surface-variant mt-1">Manage public holidays and regional office closures.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-xl font-label-md shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                Add New Holiday
+            </button>
+</div>
+<!-- Metrics Bento Row -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="p-2 bg-primary/10 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</span>
+<span class="text-label-sm text-green-600 bg-green-50 px-2 py-1 rounded-full">+2 Days</span>
+</div>
+<div class="mt-4">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Total Holidays</p>
+<h3 class="text-headline-lg text-on-surface">14 Days</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="p-2 bg-secondary-container/20 text-secondary rounded-lg">
+<span class="material-symbols-outlined" data-icon="upcoming">upcoming</span>
+</span>
+</div>
+<div class="mt-4">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Next Holiday</p>
+<h3 class="text-headline-lg text-on-surface">Easter Sunday</h3>
+<p class="text-body-sm text-on-surface-variant">March 31, 2024</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm md:col-span-2 overflow-hidden relative group">
+<div class="relative z-10">
+<p class="text-label-sm text-on-surface-variant uppercase tracking-wider">Policy Update</p>
+<h3 class="text-headline-lg text-on-surface max-w-[200px] mt-2">New Regional Holiday Guidelines</h3>
+<button class="mt-4 text-primary font-label-md flex items-center gap-1">
+                        Read more <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="absolute right-0 top-0 w-48 h-full">
+<div class="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+<img alt="Policy doc" class="h-full w-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="close up of a modern office document folder on a clean desk with warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPANNnYca4JQzrQ3zJVJW_daE2OJbw1A0jGp6Ot2ploOHVKLksMxCpYYt8BDdNsoJug23i3Bj807D6023lmHmbBI-VJMn8rIuQN9G49tzucBB8yzs_vclaQb3iqwpIAC8Nd6u8d0ZlKOHAwjSCb2mJGRLJNLYgcEV4KHBVohfzLl7rhtwblWPO3IihOiYar31HLBMPiyRAUaCOO3GE3YFBB03dR3OJ5fiWfR6mcUIo2xAZ9PZXj6gMWc3VRRZfdAUHrNYh_TJQ2vgZ"/>
+</div>
+</div>
+</div>
+<!-- Holiday Grid -->
+<div class="holiday-grid">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 group">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center font-bold text-headline-md">
+                        01
+                        <span class="text-xs ml-0.5">JAN</span>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-secondary hover:bg-slate-50 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md text-on-surface">New Year's Day</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Monday, Jan 01, 2024</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
+<span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-label-sm">Public Holiday</span>
+<span class="text-label-sm text-on-surface-variant">Global</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 group">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center font-bold text-headline-md">
+                        19
+                        <span class="text-xs ml-0.5">FEB</span>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-secondary hover:bg-slate-50 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md text-on-surface">President's Day</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Monday, Feb 19, 2024</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
+<span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-label-sm">Public Holiday</span>
+<span class="text-label-sm text-on-surface-variant">US Offices</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 group border-l-4 border-l-tertiary-fixed-dim">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 bg-tertiary text-on-tertiary rounded-xl flex items-center justify-center font-bold text-headline-md">
+                        29
+                        <span class="text-xs ml-0.5">MAR</span>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-secondary hover:bg-slate-50 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md text-on-surface">Good Friday</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Friday, Mar 29, 2024</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm">Company Observance</span>
+<span class="text-label-sm text-on-surface-variant">Global</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 group">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center font-bold text-headline-md">
+                        27
+                        <span class="text-xs ml-0.5">MAY</span>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-secondary hover:bg-slate-50 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md text-on-surface">Memorial Day</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Monday, May 27, 2024</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
+<span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-label-sm">Public Holiday</span>
+<span class="text-label-sm text-on-surface-variant">US Offices</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 group">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center font-bold text-headline-md">
+                        19
+                        <span class="text-xs ml-0.5">JUN</span>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-secondary hover:bg-slate-50 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-lg border border-slate-100">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md text-on-surface">Juneteenth</h4>
+<p class="text-body-sm text-on-surface-variant mt-1">Wednesday, Jun 19, 2024</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between">
+<span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-label-sm">Public Holiday</span>
+<span class="text-label-sm text-on-surface-variant">US Offices</span>
+</div>
+</div>
+<!-- Empty Placeholder / Add Card -->
+<div class="bg-slate-50/50 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center p-6 text-slate-400 group cursor-pointer hover:bg-slate-50 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-4xl mb-2 group-hover:text-primary" data-icon="add">add</span>
+<p class="font-label-md">Add Another Holiday</p>
+</div>
+</div>
+</main>
+<!-- Modal Overlay (Hidden by default, shown as if requested) -->
+<!-- Removed 'hidden' class to simulate being open for visual purposes, or keep it to be realistic -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+<div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+<div class="p-6 border-b border-slate-100 flex items-center justify-between">
+<h3 class="text-headline-md text-on-surface">Add New Holiday</h3>
+<button class="text-on-surface-variant hover:bg-slate-50 p-1 rounded-full">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<form class="p-6 space-y-6">
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Holiday Name</label>
+<input class="w-full bg-slate-50 border-slate-200 rounded-xl py-3 px-4 focus:ring-primary focus:border-primary text-body-md" placeholder="e.g. Founder's Day" type="text"/>
+</div>
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Holiday Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="calendar_today">calendar_today</span>
+<input class="w-full bg-slate-50 border-slate-200 rounded-xl py-3 pl-10 pr-4 focus:ring-primary focus:border-primary text-body-md" type="date"/>
+</div>
+</div>
+<div>
+<label class="block text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Applicable Region</label>
+<select class="w-full bg-slate-50 border-slate-200 rounded-xl py-3 px-4 focus:ring-primary focus:border-primary text-body-md appearance-none">
+<option>Global (All Offices)</option>
+<option>US Offices Only</option>
+<option>UK Offices Only</option>
+<option>EMEA Region</option>
+</select>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex-1 py-3 px-4 rounded-xl font-label-md text-on-surface-variant bg-slate-100 hover:bg-slate-200 transition-colors" type="button">Cancel</button>
+<button class="flex-1 py-3 px-4 rounded-xl font-label-md text-on-primary bg-primary hover:bg-primary-container transition-all shadow-lg shadow-primary/20" type="submit">Save Holiday</button>
+</div>
+</form>
+</div>
+</div>
+</body></html>

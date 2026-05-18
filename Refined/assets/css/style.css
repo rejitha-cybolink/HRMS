@@ -1,0 +1,35 @@
+:root {
+    --bs-primary: #4F46E5;
+    --bs-primary-rgb: 79, 70, 229;
+    --bs-secondary: #6B7280;
+    --bs-success: #10B981;
+    --bs-danger: #EF4444;
+    --bs-warning: #F59E0B;
+    --bs-info: #3B82F6;
+    --bs-light: #F3F4F6;
+    --bs-dark: #111827;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+    --body-bg: #F9FAFB;
+}
+body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--body-bg); color: #374151; }
+.wrapper { min-height: 100vh; }
+#sidebar-container { width: var(--sidebar-width); flex-shrink: 0; }
+.sidebar { width: var(--sidebar-width); height: 100vh; position: fixed; top: 0; left: 0; background: #ffffff; border-right: 1px solid #E5E7EB; z-index: 1000; overflow-y: auto; transition: all 0.3s; }
+.content-wrapper { margin-left: 0; width: 100%; display: flex; flex-direction: column; min-height: 100vh; }
+.top-header { height: var(--header-height); background: #ffffff; border-bottom: 1px solid #E5E7EB; position: sticky; top: 0; z-index: 999; }
+.sidebar-header { height: var(--header-height); display: flex; align-items: center; padding: 0 1.5rem; border-bottom: 1px solid #E5E7EB; position: sticky; top: 0; background: #fff; z-index: 10; }
+.sidebar-menu { padding: 1rem 0; list-style: none; margin: 0; }
+.sidebar-menu li a { padding: 0.75rem 1.5rem; display: flex; align-items: center; color: #6B7280; text-decoration: none; font-weight: 500; transition: all 0.2s; }
+.sidebar-menu li a:hover, .sidebar-menu li.active a { color: var(--bs-primary); background: rgba(79, 70, 229, 0.05); border-right: 3px solid var(--bs-primary); }
+.sidebar-menu .bi { margin-right: 12px; font-size: 1.2rem; }
+.card { transition: transform 0.2s, box-shadow 0.2s; }
+.hover-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.btn-primary { background-color: var(--bs-primary); border-color: var(--bs-primary); }
+.btn-primary:hover { background-color: #4338CA; border-color: #4338CA; }
+@media (max-width: 991.98px) {
+    #sidebar-container { width: 0; }
+    .sidebar { margin-left: calc(var(--sidebar-width) * -1); }
+    .sidebar.active { margin-left: 0; }
+}

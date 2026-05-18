@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            <main class="container-fluid p-4">
+                <div class="mb-4"><h3 class="fw-bold text-dark mb-1">System Settings</h3></div>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 p-4"><h5 class="fw-bold mb-4">General Settings</h5><form><div class="mb-3"><label class="form-label small fw-bold text-muted">Company Name</label><input type="text" class="form-control bg-light border-0" value="Acme Corp"></div><div class="mb-3"><label class="form-label small fw-bold text-muted">Timezone</label><select class="form-select bg-light border-0"><option>UTC</option><option>EST</option></select></div><button type="submit" class="btn btn-primary fw-bold">Save Settings</button></form></div>
+                    </div>
+                </div>
+            </main>
+            <div id="footer-container"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

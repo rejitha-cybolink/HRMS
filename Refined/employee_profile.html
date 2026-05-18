@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Profile - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            <main class="container-fluid p-4">
+                <div class="mb-4"><h3 class="fw-bold text-dark mb-1">Employee Profile</h3></div>
+                <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="avatar bg-primary text-white fs-2" style="width: 80px; height: 80px;">ER</div>
+                        <div><h4 class="fw-bold mb-1">Elena Rodriguez</h4><p class="text-muted mb-0">Senior Designer | Design Dept</p></div>
+                        <div class="ms-auto"><button class="btn btn-outline-primary shadow-sm"><i class="bi bi-pencil me-2"></i> Edit Profile</button></div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6"><div class="card border-0 shadow-sm rounded-4 p-4 h-100"><h5 class="fw-bold mb-4">Personal Details</h5><p><strong>Email:</strong> elena@company.com</p><p><strong>Phone:</strong> +1 234 567 890</p><p><strong>Joined:</strong> Jan 15, 2022</p></div></div>
+                    <div class="col-md-6"><div class="card border-0 shadow-sm rounded-4 p-4 h-100"><h5 class="fw-bold mb-4">Job Info</h5><p><strong>Manager:</strong> Sarah Jenkins</p><p><strong>Type:</strong> Full-Time</p><p><strong>Status:</strong> <span class="badge bg-success-subtle text-success">Active</span></p></div></div>
+                </div>
+            </main>
+            <div id="footer-container"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

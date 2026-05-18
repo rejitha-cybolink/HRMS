@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container": "#edeeef",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-container": "#ffd0cc",
+                        "on-primary-fixed": "#0f0069",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary": "#960014",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-container": "#dad7ff",
+                        "tertiary-container": "#bc1d25",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-tertiary-fixed": "#410004",
+                        "surface-dim": "#d9dadb",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#4f46e5",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface": "#191c1d",
+                        "outline": "#777587",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#006c49",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed": "#002113",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#e2dfff",
+                        "on-background": "#191c1d",
+                        "surface-tint": "#4d44e3",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#005236",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "secondary-container": "#6cf8bb",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "outline-variant": "#c7c4d8",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#3525cd",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "0.5rem",
+                        "base": "4px",
+                        "lg": "1.5rem",
+                        "gutter": "1rem",
+                        "xs": "0.25rem",
+                        "container-margin": "1rem",
+                        "md": "1rem",
+                        "2xl": "3rem",
+                        "xl": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top AppBar (from Shared Components) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="Employee profile photo" class="w-full h-full object-cover" data-alt="Professional portrait of a middle-aged male employee with a warm smile, corporate headshot style, clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDokgPWNYchlqbZSd1UaMC9LEfc9jYqKEwJICAZWesy5dT55quHSg0vMY97LbCKTWPqAN6FgnweSC46ITMOuymceTfrGM4nR4cG5YnGStL5tCQgBTu56yr6MqmtFB0vMSbFp7i_7rpVsf2TDwJFMLXOtrCVeBWlHzEuAk_4jydyMppm9nG6JDQDsoKMOhADEuBPiAXbZcadyuYMPRVMQmrKUP857egvTbgB1HeX_U7V2CBH3_s6jyrvGS06LnXET4xEcnsqaw3F0tM"/>
+</div>
+<h1 class="text-xl font-extrabold tracking-tighter text-indigo-600 dark:text-indigo-400">Workforce</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-2xl mx-auto">
+<!-- Header & Summary Section -->
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Attendance History</h2>
+<div class="flex items-center bg-white border border-outline-variant rounded-lg px-3 py-1.5 shadow-sm">
+<span class="font-label-md text-label-md text-on-surface-variant mr-2">October 2023</span>
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+</div>
+</div>
+<!-- Bento Summary Card -->
+<div class="grid grid-cols-2 gap-md">
+<div class="col-span-2 bg-primary-container p-lg rounded-xl shadow-[0px_10px_30px_rgba(79,70,229,0.1)] text-white">
+<p class="font-label-sm text-label-sm opacity-80 uppercase tracking-widest mb-xs">Total Monthly Hours</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-[40px] leading-tight font-extrabold">164.5</span>
+<span class="font-body-lg text-body-lg opacity-90">hrs</span>
+</div>
+<div class="mt-4 flex items-center gap-2 bg-white/10 w-fit px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">8% above target</span>
+</div>
+</div>
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Avg. Daily</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">8.2h</p>
+</div>
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">On-time Rate</p>
+<p class="font-headline-sm text-headline-sm text-secondary">96%</p>
+</div>
+</div>
+</div>
+<!-- History Feed -->
+<div class="space-y-lg">
+<!-- Group: Today -->
+<section>
+<div class="flex items-center gap-4 mb-md">
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">TODAY, OCT 24</span>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="space-y-md">
+<!-- Session Card -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-md flex justify-between items-start">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="login">login</span>
+</div>
+<div class="w-[2px] h-8 bg-surface-container my-1"></div>
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</div>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Clock In</p>
+<p class="font-body-lg text-body-lg font-bold">08:52 AM</p>
+</div>
+<div class="mt-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Clock Out</p>
+<p class="font-body-lg text-body-lg font-bold">05:45 PM</p>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="bg-surface-container-low px-3 py-1 rounded-lg inline-block">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Duration</p>
+<p class="font-body-lg text-body-lg font-bold text-primary">8h 53m</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest px-md py-2 border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-base" data-icon="coffee">coffee</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Lunch Break</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">45m</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Group: Yesterday -->
+<section>
+<div class="flex items-center gap-4 mb-md">
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">YESTERDAY, OCT 23</span>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="space-y-md">
+<!-- Dual Session Card (Gapped) -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-md">
+<!-- Morning Session -->
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md font-bold text-on-surface">09:00 AM - 01:00 PM</span>
+<span class="bg-indigo-50 text-indigo-700 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Morning</span>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface-variant">4h 00m</span>
+</div>
+<!-- Calculated Break Gap -->
+<div class="relative flex items-center py-2 mb-4">
+<div class="flex-1 h-[1px] border-t border-dashed border-outline"></div>
+<div class="mx-4 flex items-center gap-2 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-sm" data-icon="hourglass_empty">hourglass_empty</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-tighter">Break: 1h 30m</span>
+</div>
+<div class="flex-1 h-[1px] border-t border-dashed border-outline"></div>
+</div>
+<!-- Afternoon Session -->
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md font-bold text-on-surface">02:30 PM - 06:15 PM</span>
+<span class="bg-indigo-50 text-indigo-700 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Afternoon</span>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface-variant">3h 45m</span>
+</div>
+</div>
+<div class="bg-primary-container/5 px-md py-3 border-t border-outline-variant flex justify-between items-center">
+<span class="font-label-md text-label-md font-bold text-primary">Daily Total</span>
+<span class="font-body-lg text-body-lg font-extrabold text-primary">7h 45m</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Group: Oct 22 -->
+<section>
+<div class="flex items-center gap-4 mb-md">
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">OCT 22, 2023</span>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm p-md opacity-70">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="weekend">weekend</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg font-bold">Sunday</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Non-working day</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom NavBar (from Shared Components) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 h-20 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0px_-4px_20px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<button class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-4 py-1 hover:text-indigo-500 dark:hover:text-indigo-300 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[11px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/20 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Inter'] text-[11px] font-medium">Attendance</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-4 py-1 hover:text-indigo-500 dark:hover:text-indigo-300 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span class="font-['Inter'] text-[11px] font-medium">Leaves</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-4 py-1 hover:text-indigo-500 dark:hover:text-indigo-300 active:scale-90 transition-all duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>

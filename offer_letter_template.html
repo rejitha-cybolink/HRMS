@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Offer Letter - HRCore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#1f108e",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#d0e1fb",
+                        "primary-container": "#3730a3",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c8c4d5",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "on-tertiary-container": "#fe9562",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "background": "#f7f9fb",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-tertiary-fixed-variant": "#7a3003",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-surface-variant": "#464553",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-container": "#54647a",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-primary": "#c3c0ff",
+                        "error": "#ba1a1a",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#777584",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#752c00",
+                        "secondary": "#505f76",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-primary-fixed-variant": "#3b35a7",
+                        "tertiary": "#511c00",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-tint": "#544fc0",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#a9a7ff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "lg": "2rem",
+                        "sm": "1rem",
+                        "margin-desktop": "2.5rem",
+                        "xs": "0.5rem",
+                        "md": "1.5rem",
+                        "gutter": "1rem",
+                        "base-unit": "4px",
+                        "margin-mobile": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        @media print {
+            body { background-color: #ffffff; }
+            .no-print { display: none; }
+            .print-shadow-none { box-shadow: none !important; border: 1px solid #e2e8f0; }
+            .page-break { page-break-before: always; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface flex flex-col items-center py-12 px-4 min-h-screen text-on-surface">
+<!-- Document Action Toolbar (Not for print) -->
+<div class="no-print w-full max-w-[850px] mb-8 flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="description">description</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">Offer Letter</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Review and export as PDF</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+                Edit Letter
+            </button>
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-md hover:bg-primary-container active:scale-95 transition-all" onclick="window.print()">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                Download PDF
+            </button>
+</div>
+</div>
+<!-- Letter Content Canvas -->
+<div class="w-full max-w-[850px] bg-white shadow-xl rounded-xl p-16 print-shadow-none relative overflow-hidden">
+<!-- Subtle Branding Element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-bl-[200px] -mr-32 -mt-32"></div>
+<!-- Header: Logo and Address -->
+<header class="flex justify-between items-start mb-16 relative">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="corporate_fare" data-weight="fill">corporate_fare</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">HRCore</span>
+</div>
+<div class="mt-4 font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    123 Innovation Drive, Suite 400<br/>
+                    Silicon Valley, CA 94043<br/>
+                    United States
+                </div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-surface-variant mb-1">Date of Issue</div>
+<div class="font-headline-md text-headline-md">October 24, 2023</div>
+</div>
+</header>
+<!-- Candidate Details -->
+<section class="mb-12">
+<div class="font-label-md text-label-md text-primary mb-4">CONFIDENTIAL</div>
+<div class="font-body-md text-body-md leading-relaxed text-on-surface">
+<span class="block font-bold text-headline-md mb-1">Sarah J. Montgomery</span>
+<span class="block">4582 Oakwood Avenue</span>
+<span class="block">San Francisco, CA 94110</span>
+</div>
+</section>
+<!-- Formal Salutation -->
+<section class="mb-10">
+<h2 class="font-headline-md text-headline-md mb-4">Subject: Offer of Employment</h2>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                Dear Sarah,
+            </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mt-4">
+                On behalf of HRCore, we are delighted to offer you the position of <span class="font-semibold text-primary">Senior Product Designer</span>. We were impressed with your portfolio and your vision for human-centric design systems. We believe your expertise will be invaluable to our design team as we continue to scale our enterprise solutions.
+            </p>
+</section>
+<!-- Bento Style Information Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<!-- Position Details -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider">Position Details</h3>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between border-b border-slate-200 pb-2">
+<span class="font-body-sm text-on-surface-variant">Job Title</span>
+<span class="font-label-md">Senior Product Designer</span>
+</div>
+<div class="flex justify-between border-b border-slate-200 pb-2">
+<span class="font-body-sm text-on-surface-variant">Department</span>
+<span class="font-label-md">Product &amp; Design</span>
+</div>
+<div class="flex justify-between border-b border-slate-200 pb-2">
+<span class="font-body-sm text-on-surface-variant">Reporting to</span>
+<span class="font-label-md">Director of UX</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-sm text-on-surface-variant">Employment Type</span>
+<span class="font-label-md">Full-time, Permanent</span>
+</div>
+</div>
+</div>
+<!-- Joining Details -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider">Joining Details</h3>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between border-b border-slate-200 pb-2">
+<span class="font-body-sm text-on-surface-variant">Tentative Start Date</span>
+<span class="font-label-md">November 15, 2023</span>
+</div>
+<div class="flex justify-between border-b border-slate-200 pb-2">
+<span class="font-body-sm text-on-surface-variant">Work Location</span>
+<span class="font-label-md">Hybrid (HQ / Remote)</span>
+</div>
+<div class="flex justify-between border-b border-slate-200 pb-2">
+<span class="font-body-sm text-on-surface-variant">Notice Period</span>
+<span class="font-label-md">60 Days</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-sm text-on-surface-variant">Probation</span>
+<span class="font-label-md">3 Months</span>
+</div>
+</div>
+</div>
+<!-- Remuneration & Benefits -->
+<div class="md:col-span-2 p-6 rounded-xl bg-primary-container text-white shadow-lg overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="payments">payments</span>
+</div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined" data-icon="monetization_on">monetization_on</span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider">Compensation &amp; Benefits</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col">
+<span class="font-body-sm opacity-80 mb-1">Annual Base Salary</span>
+<span class="font-headline-lg">$145,000 USD</span>
+<span class="font-body-sm opacity-60">Paid bi-weekly</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm opacity-80 mb-1">Sign-on Bonus</span>
+<span class="font-headline-lg">$10,000 USD</span>
+<span class="font-body-sm opacity-60">One-time payment</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm opacity-80 mb-1">Equity (Stock Options)</span>
+<span class="font-headline-lg">2,500 Shares</span>
+<span class="font-body-sm opacity-60">4-year vesting schedule</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-white/20 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm">Comprehensive Medical, Dental, and Vision coverage</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm">Uncapped Paid Time Off (PTO) policy</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm">401(k) retirement plan with 4% company match</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm">Annual $2,500 Professional Development stipend</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Terms & Conditions (Page 2 feel) -->
+<section class="mb-16">
+<h3 class="font-headline-md text-headline-md mb-6 border-b border-outline-variant pb-2">Terms &amp; Conditions</h3>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-2">1. Background Verification</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                        This offer is contingent upon successful completion of a comprehensive background check and verification of employment history. We expect all credentials provided during the interview process to be accurate.
+                    </p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-2">2. Confidentiality &amp; Intellectual Property</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                        As a Senior Product Designer, you will have access to proprietary trade secrets. You will be required to sign our standard Non-Disclosure Agreement (NDA) and Intellectual Property Assignment Agreement prior to your start date.
+                    </p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-2">3. At-Will Employment</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                        Employment with HRCore is "at-will," meaning that either you or the Company may terminate the employment relationship at any time, with or without cause, and with or without notice.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Acceptance Footer -->
+<section class="mt-20">
+<p class="font-body-md text-body-md text-on-surface mb-12">
+                To accept this offer, please sign and return a copy of this letter by <span class="font-semibold underline">October 31, 2023</span>. We look forward to having you join the team!
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-16">
+<!-- Company Signature -->
+<div class="space-y-8">
+<div class="h-16 flex items-end">
+<div class="font-headline-md italic text-primary opacity-80" style="font-family: cursive;">Marcus Aurelius</div>
+</div>
+<div class="border-t border-on-surface-variant pt-2">
+<span class="block font-label-md text-label-md">Marcus Aurelius</span>
+<span class="block font-body-sm text-on-surface-variant">Chief People Officer, HRCore</span>
+</div>
+</div>
+<!-- Candidate Signature -->
+<div class="space-y-8">
+<div class="h-16 border-b border-dashed border-outline flex items-end justify-center px-4">
+<span class="font-body-sm text-on-surface-variant italic opacity-50">Sign here</span>
+</div>
+<div class="border-t border-on-surface-variant pt-2">
+<span class="block font-label-md text-label-md">Sarah J. Montgomery</span>
+<span class="block font-body-sm text-on-surface-variant">Date of Acceptance</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Document Footer -->
+<footer class="mt-24 pt-8 border-t border-outline-variant flex justify-between items-center text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+<span>OFFER_REF_2023_DESIGN_SM77</span>
+<span>Page 1 of 1</span>
+<span>© 2023 HRCORE INC.</span>
+</footer>
+</div>
+<!-- Supplementary Decoration for the web view -->
+<div class="no-print mt-12 text-on-surface-variant font-body-sm flex gap-6">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+            Encrypted Document
+        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+            Digitally Verified
+        </div>
+</div>
+</body></html>

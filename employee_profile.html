@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1d",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#4d44e3",
+                        "surface-dim": "#d9dadb",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#e2dfff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "primary": "#3525cd",
+                        "on-surface-variant": "#464555",
+                        "tertiary": "#960014",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-surface": "#191c1d",
+                        "secondary-container": "#6cf8bb",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-primary": "#c3c0ff",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd0cc",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-fixed": "#002113",
+                        "surface-bright": "#f8f9fa",
+                        "primary-container": "#4f46e5",
+                        "outline-variant": "#c7c4d8",
+                        "on-primary-fixed": "#0f0069",
+                        "on-primary-container": "#dad7ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "outline": "#777587",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-tertiary-fixed": "#410004",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed": "#6ffbbe",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#bc1d25",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "3rem",
+                        "base": "4px",
+                        "md": "1rem",
+                        "lg": "1.5rem",
+                        "container-margin": "1rem",
+                        "gutter": "1rem",
+                        "sm": "0.5rem",
+                        "xs": "0.25rem",
+                        "xl": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm docked full-width top-0 sticky z-40 flex items-center justify-between px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="text-lg font-bold text-indigo-600 dark:text-indigo-400">HRMS Manager</span>
+</div>
+<div class="hidden md:flex items-center space-x-6">
+<span class="font-sans antialiased text-base font-semibold text-indigo-600 dark:text-indigo-400">Dashboard</span>
+<span class="font-sans antialiased text-base font-semibold text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors px-3 py-1 rounded-lg cursor-pointer">Directory</span>
+<span class="font-sans antialiased text-base font-semibold text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors px-3 py-1 rounded-lg cursor-pointer">Reports</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gray-500 cursor-pointer" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-indigo-100">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a male executive with a warm smile in a corporate setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ZTpctWIiobUhwG2YAVakTx7XhPTL4fjXaUnh5qGi0jGOiCXk_T3OXt2cnwD9AQGTm8RcbTxRWlGyT5P5r82Zm1VoYOpjZir5F3yjRbMXjJbQWj-f1H6XXxLAqgyANBW4rfpIB67nh6MLKlvfpUwiIC6DulUs3G5JkCnVa5i4e8uzQMxY5bghIxqMKQfqYd9J8-N6vYny-V4yI-OntbHMuffn9J6eXX2LsxjIPTDevWEPl_7exuk6I9lPTXKJLfkmCmhOxFLciMo"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-lg md:py-xl flex flex-col md:flex-row gap-lg">
+<!-- Profile Sidebar -->
+<aside class="w-full md:w-80 flex-shrink-0 space-y-lg">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 p-lg text-center">
+<div class="relative w-32 h-32 mx-auto mb-md">
+<img class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md" data-alt="close up of Alex Rivera, a professional HR Manager with a confident expression, neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU3YwqmoxrMolivIySxqfeOv66MrpWxRqh7TS2sNbnrct6N5jO0F0XgV2ZE0_oM8O4LBTt8AH50OlIivTxOX1fNiseaXiCvV8J8zZZ6AVq6rW-B6dnLtGHrozJv5-4cOpLezI56kl78loc69QmBtF6EVynfZY9DIQxWuWPQKp7KKMWZeX99JMX_igB7SHFZkCkNzIow3ogtJVcQRpKRq8BERc4a3uANzYOn-FxztTr17vOl6d6KhyoLXBC0zFno_hfcH2t-ZayTf8"/>
+<div class="absolute bottom-1 right-1 bg-primary p-1.5 rounded-full text-white border-2 border-white cursor-pointer">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+</div>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-background">Alex Rivera</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">HR Manager</p>
+<div class="flex flex-col gap-sm">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md flex items-center justify-center gap-2 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+                        Send Message
+                    </button>
+<button class="w-full bg-surface-container-high text-on-surface py-3 rounded-lg font-label-md flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+                        Export Resume
+                    </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 p-lg">
+<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-md">Contact Information</h3>
+<ul class="space-y-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="alternate_email">alternate_email</span>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Email Address</p>
+<p class="font-body-md text-body-md">alex.rivera@corp.com</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="call">call</span>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Phone Number</p>
+<p class="font-body-md text-body-md">+1 (555) 234-5678</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Office Location</p>
+<p class="font-body-md text-body-md">Headquarters, Floor 4</p>
+</div>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Content Area: Bento Grid Layout -->
+<section class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-lg auto-rows-min">
+<!-- Employment Details -->
+<div class="col-span-1 md:col-span-2 bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden">
+<div class="bg-indigo-50/50 p-lg border-b border-indigo-100 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="badge">badge</span>
+<h2 class="font-headline-sm text-headline-sm text-on-background">Employment Details</h2>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Active</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-lg p-lg">
+<div class="p-md bg-background rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-outline mb-1">Employee ID</p>
+<p class="font-headline-sm text-headline-sm text-primary">#EMP-2024-089</p>
+</div>
+<div class="p-md bg-background rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-outline mb-1">Joining Date</p>
+<p class="font-headline-sm text-headline-sm">March 12, 2021</p>
+</div>
+<div class="p-md bg-background rounded-lg border border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-outline mb-1">Department</p>
+<p class="font-headline-sm text-headline-sm">Human Resources</p>
+</div>
+</div>
+</div>
+<!-- Personal Information -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 p-lg">
+<div class="flex items-center gap-3 mb-lg border-b border-gray-100 pb-md">
+<span class="material-symbols-outlined text-primary" data-icon="person_search">person_search</span>
+<h2 class="font-headline-sm text-headline-sm text-on-background">Personal Information</h2>
+</div>
+<div class="space-y-lg">
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline">Full Name</p>
+<p class="font-body-md text-body-md font-medium">Alex Rivera</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Date of Birth</p>
+<p class="font-body-md text-body-md font-medium">May 24, 1988</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-outline">Gender</p>
+<p class="font-body-md text-body-md font-medium">Male</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Nationality</p>
+<p class="font-body-md text-body-md font-medium">American</p>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline">Marital Status</p>
+<p class="font-body-md text-body-md font-medium">Married</p>
+</div>
+</div>
+</div>
+<!-- Emergency Contacts -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 p-lg">
+<div class="flex items-center gap-3 mb-lg border-b border-gray-100 pb-md">
+<span class="material-symbols-outlined text-primary" data-icon="contact_emergency">contact_emergency</span>
+<h2 class="font-headline-sm text-headline-sm text-on-background">Emergency Contacts</h2>
+</div>
+<div class="space-y-lg">
+<div class="p-md rounded-lg bg-red-50/50 border border-red-100 flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background">Sarah Rivera</p>
+<p class="font-label-sm text-label-sm text-outline">Spouse</p>
+<p class="font-body-md text-body-md font-medium mt-1">+1 (555) 987-6543</p>
+</div>
+</div>
+<div class="p-md rounded-lg bg-background border border-gray-100 flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-background">Michael Rivera</p>
+<p class="font-label-sm text-label-sm text-outline">Brother</p>
+<p class="font-body-md text-body-md font-medium mt-1">+1 (555) 123-9988</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills & Certifications (Additional Bento Element) -->
+<div class="col-span-1 md:col-span-2 bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 p-lg">
+<div class="flex items-center gap-3 mb-lg border-b border-gray-100 pb-md">
+<span class="material-symbols-outlined text-primary" data-icon="workspace_premium">workspace_premium</span>
+<h2 class="font-headline-sm text-headline-sm text-on-background">Skills &amp; Focus Areas</h2>
+</div>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full font-label-md border border-indigo-100">Strategic HR</span>
+<span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full font-label-md border border-indigo-100">Conflict Resolution</span>
+<span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full font-label-md border border-indigo-100">Talent Acquisition</span>
+<span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full font-label-md border border-indigo-100">Policy Management</span>
+<span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full font-label-md border border-indigo-100">Employee Wellness</span>
+<span class="bg-indigo-50 text-indigo-700 px-4 py-1.5 rounded-full font-label-md border border-indigo-100">SHRM-CP</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-2 pb-safe">
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[11px] font-medium tracking-tight">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="text-[11px] font-medium tracking-tight">Time</span>
+</div>
+<div class="flex flex-col items-center justify-center text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl px-3 py-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[11px] font-medium tracking-tight">Directory</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-3 py-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="text-[11px] font-medium tracking-tight">Requests</span>
+</div>
+</nav>
+<div class="h-20 md:hidden"></div> <!-- Spacer for mobile bottom nav -->
+</body></html>

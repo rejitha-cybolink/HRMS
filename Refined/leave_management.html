@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management - HRMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex wrapper">
+        <div id="sidebar-container"></div>
+        <div class="content-wrapper flex-grow-1 bg-light">
+            <div id="header-container"></div>
+            <main class="container-fluid p-4">
+                <div class="mb-4"><h3 class="fw-bold text-dark mb-1">Leave Management</h3></div>
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3"><div class="card border-0 shadow-sm rounded-4 p-4 hover-card bg-white"><h6 class="text-muted fw-bold mb-1">Paid Leave</h6><h2 class="fw-bold text-dark mb-0">12 Days</h2></div></div>
+                    <div class="col-md-3"><div class="card border-0 shadow-sm rounded-4 p-4 hover-card bg-white"><h6 class="text-muted fw-bold mb-1">Sick Leave</h6><h2 class="fw-bold text-dark mb-0">5 Days</h2></div></div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm rounded-4 p-4"><h5 class="fw-bold mb-4">Request Leave</h5>
+                            <form><div class="mb-3"><label class="form-label small fw-bold text-muted">Type</label><select class="form-select bg-light border-0"><option>Annual</option><option>Sick</option></select></div><div class="mb-3"><label class="form-label small fw-bold text-muted">From</label><input type="date" class="form-control bg-light border-0"></div><button type="submit" class="btn btn-primary w-100 fw-bold py-2">Submit</button></form>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-header bg-white border-bottom p-4"><h5 class="fw-bold mb-0">My Requests</h5></div>
+                            <div class="card-body p-0">
+                                <table class="table table-hover align-middle mb-0"><thead class="bg-light text-muted small text-uppercase"><tr><th class="ps-4 py-3">Type</th><th>Dates</th><th class="pe-4 text-end">Status</th></tr></thead>
+                                <tbody><tr><td class="ps-4 fw-bold">Annual</td><td>Oct 24 - Oct 26</td><td class="pe-4 text-end"><span class="badge bg-warning-subtle text-warning px-3">Pending</span></td></tr></tbody></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div id="footer-container"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

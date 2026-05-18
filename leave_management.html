@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container": "#edeeef",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-container": "#ffd0cc",
+                    "on-primary-fixed": "#0f0069",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary": "#960014",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-container": "#dad7ff",
+                    "tertiary-container": "#bc1d25",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-tertiary-fixed": "#410004",
+                    "surface-dim": "#d9dadb",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#4f46e5",
+                    "surface-container-low": "#f3f4f5",
+                    "on-surface": "#191c1d",
+                    "outline": "#777587",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary": "#006c49",
+                    "background": "#f8f9fa",
+                    "on-secondary-fixed": "#002113",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#e2dfff",
+                    "on-background": "#191c1d",
+                    "surface-tint": "#4d44e3",
+                    "surface-variant": "#e1e3e4",
+                    "on-surface-variant": "#464555",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-bright": "#f8f9fa",
+                    "on-secondary-fixed-variant": "#005236",
+                    "inverse-surface": "#2e3132",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "secondary-container": "#6cf8bb",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "outline-variant": "#c7c4d8",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#3525cd",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "0.5rem",
+                    "base": "4px",
+                    "lg": "1.5rem",
+                    "gutter": "1rem",
+                    "xs": "0.25rem",
+                    "container-margin": "1rem",
+                    "md": "1rem",
+                    "2xl": "3rem",
+                    "xl": "2rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .bento-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 30px rgba(79, 70, 229, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary-fixed">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a smiling employee with a neutral office background, high quality corporate photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufDStWW2gnuoBtVEXaS1t6L7yYun0Kl7qG2HJheGJHHlTZGxTt7OKizYJqS9f8ffx6k3GnWjAyUYlRXEq61TqUwsHZktyLor-EZYaC0NpkXLqAzRspvtho_yBiKROL0iAOZId9ZkNtcC6yNWVGH-_yE-VTVZCscHh8XsTONOrs4NuXFmayAuofTph4Ei-3H89JCcTS_kw-Syb2d--a5DTZK0s9kZbUAz2hsol-2viHqrcX9gPSf6zJpm4bcoCJi_If_16bAFABqQ"/>
+</div>
+<h1 class="text-xl font-extrabold tracking-tighter text-indigo-600 dark:text-indigo-400">Workforce</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="mt-20 px-container-margin max-w-7xl mx-auto">
+<!-- Page Title & Primary Action -->
+<div class="flex items-end justify-between mb-lg">
+<div>
+<p class="font-label-sm text-primary uppercase mb-1">Time Off</p>
+<h2 class="font-headline-lg text-on-surface">Leaves</h2>
+</div>
+</div>
+<!-- Leave Balance Bento Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md mb-lg">
+<div class="bento-card bg-surface-container-lowest p-lg rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col justify-between min-h-[140px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container p-2 bg-primary-fixed rounded-lg" data-icon="beach_access">beach_access</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant">Paid Leave</p>
+<p class="font-headline-md text-on-surface">12 <span class="font-label-sm text-outline font-normal">Days</span></p>
+</div>
+</div>
+<div class="bento-card bg-surface-container-lowest p-lg rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col justify-between min-h-[140px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary p-2 bg-tertiary-fixed rounded-lg" data-icon="medical_services">medical_services</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant">Sick Leave</p>
+<p class="font-headline-md text-on-surface">05 <span class="font-label-sm text-outline font-normal">Days</span></p>
+</div>
+</div>
+<div class="bento-card bg-surface-container-lowest p-lg rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col justify-between min-h-[140px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary p-2 bg-secondary-fixed rounded-lg" data-icon="event_repeat">event_repeat</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface-variant">Comp Off</p>
+<p class="font-headline-md text-on-surface">02 <span class="font-label-sm text-outline font-normal">Days</span></p>
+</div>
+</div>
+<div class="bento-card bg-primary-container p-lg rounded-xl shadow-[0px_10px_30px_rgba(79,70,229,0.15)] flex flex-col justify-between min-h-[140px] text-on-primary-container">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined p-2 bg-white/20 rounded-lg" data-icon="history">history</span>
+</div>
+<div>
+<p class="font-label-md opacity-80">Used This Year</p>
+<p class="font-headline-md">08 <span class="font-label-sm opacity-60 font-normal">Days</span></p>
+</div>
+</div>
+</div>
+<!-- Main Content Area: Form & List -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Quick Request Form -->
+<div class="lg:col-span-1">
+<div class="bg-white p-lg rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 sticky top-24">
+<h3 class="font-headline-sm text-on-surface mb-md">Request Leave</h3>
+<form class="space-y-md">
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1">Leave Type</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg font-body-md text-on-surface focus:ring-2 focus:ring-primary-container">
+<option>Annual Paid Leave</option>
+<option>Sick Leave</option>
+<option>Casual Leave</option>
+<option>Maternity/Paternity</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1">From Date</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg font-body-md text-on-surface focus:ring-2 focus:ring-primary-container" type="date"/>
+</div>
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1">To Date</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg font-body-md text-on-surface focus:ring-2 focus:ring-primary-container" type="date"/>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1">Reason (Optional)</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg font-body-md text-on-surface focus:ring-2 focus:ring-primary-container" placeholder="Describe briefly..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary-container text-white py-3 rounded-lg font-label-md shadow-lg shadow-indigo-100 active:scale-[0.98] transition-transform" type="submit">
+                            Submit Request
+                        </button>
+</form>
+</div>
+</div>
+<!-- My Requests List -->
+<div class="lg:col-span-2 space-y-md">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-headline-sm text-on-surface">My Requests</h3>
+<button class="text-primary font-label-md flex items-center gap-1 hover:underline">
+                        View All History
+                        <span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Request Card: Pending -->
+<div class="bg-white p-md md:p-lg rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="pending_actions">pending_actions</span>
+</div>
+<div>
+<p class="font-body-lg font-semibold text-on-surface">Annual Paid Leave</p>
+<p class="font-body-md text-on-surface-variant">Oct 24 - Oct 26 (3 Days)</p>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-md">
+<div class="px-3 py-1 bg-amber-50 text-amber-700 rounded-full font-label-sm border border-amber-100 flex items-center gap-1">
+<span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                            Pending
+                        </div>
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+<!-- Request Card: Approved -->
+<div class="bg-white p-md md:p-lg rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="font-body-lg font-semibold text-on-surface">Sick Leave</p>
+<p class="font-body-md text-on-surface-variant">Sep 12 - Sep 13 (2 Days)</p>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-md">
+<div class="px-3 py-1 bg-secondary-container/30 text-on-secondary-container rounded-full font-label-sm border border-secondary-container/50 flex items-center gap-1">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                            Approved
+                        </div>
+<button class="p-2 text-outline opacity-40 cursor-not-allowed">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Request Card: Rejected -->
+<div class="bg-white p-md md:p-lg rounded-xl border border-gray-100 shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-error-container/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="error">error</span>
+</div>
+<div>
+<p class="font-body-lg font-semibold text-on-surface">Casual Leave</p>
+<p class="font-body-md text-on-surface-variant">Aug 05 (1 Day)</p>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-md">
+<div class="px-3 py-1 bg-error-container/30 text-on-error-container rounded-full font-label-sm border border-error-container/50 flex items-center gap-1">
+<span class="w-2 h-2 bg-error rounded-full"></span>
+                            Rejected
+                        </div>
+<button class="p-2 text-primary hover:bg-primary-fixed rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+</div>
+</div>
+<!-- Upcoming Holiday Widget (Asymmetric Layout element) -->
+<div class="relative overflow-hidden rounded-xl h-32 flex items-center p-lg text-white">
+<div class="absolute inset-0 bg-indigo-900/80 z-10"></div>
+<img alt="Holiday" class="absolute inset-0 w-full h-full object-cover" data-alt="Warm festive celebration background with blurred golden lights and elegant decorative elements, high-end corporate lifestyle mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjwBLJJGuKiGiAkHNXLNzqIhV2EPs-BJ4FhG8QU2iFzius1cBPIpp8YAdfY5-3FlA7xR6njush1CCv8cEC6xS1kHJSBlHy5XMUPT49YsGah8qq4rwbAaf8QdxFz8dcSur9-koUCEgk5zELD2BMx4JYMmwrE5p4ASBFYoHQZNgTSRSn2oPAEat01D12PRM-ueL2OSxpfWMzWIuCILdoRdcTLO5D7qAzMuLRSqK-zailPMRWA44m2C2ZJhR6ovUa9Ty8QnHlQ1VJ_6Y"/>
+<div class="relative z-20">
+<p class="font-label-sm opacity-80 uppercase">Next Public Holiday</p>
+<h4 class="font-headline-sm">Thanksgiving Break</h4>
+<p class="font-body-md opacity-90">Nov 23 - Nov 24, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for Mobile (Contextually relevant for Leaves screen) -->
+<button class="md:hidden fixed bottom-24 right-6 w-14 h-14 bg-primary-container text-white rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe pt-2 h-20 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 shadow-[0px_-4px_20px_rgba(0,0,0,0.05)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-4 py-1 hover:text-indigo-500 dark:hover:text-indigo-300 active:scale-90 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-4 py-1 hover:text-indigo-500 dark:hover:text-indigo-300 active:scale-90 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Attendance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/20 rounded-xl px-4 py-1 active:scale-90 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Leaves</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 px-4 py-1 hover:text-indigo-500 dark:hover:text-indigo-300 active:scale-90 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-medium mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
